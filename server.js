@@ -18,14 +18,14 @@ mongoose.connect("mongodb+srv://admin:adminpass@cluster0.yv7njjb.mongodb.net/tes
 });
 
 const employeeSchema = new mongoose.Schema({
-  employee_id: String,
+  employee_id: {type:String,unique:true},
   full_name: String,
   email: String,
   hashed_password: String,
 });
 
 const projectSchema = new mongoose.Schema({
-  project_code: String,
+  project_code: {type:String,unique:true},
   project_name: String,
   project_description: String,
 });
