@@ -21,9 +21,12 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+ //Last 5 Assignments only Shown
+  const recentAssignments = assignments.slice(-5);
+
   return (
     <div className="App">
-      <ProjectTables assignments={assignments} />
+      <ProjectTables assignments={recentAssignments} />
     </div>
   );
 }
